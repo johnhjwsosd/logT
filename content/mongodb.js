@@ -3,12 +3,14 @@ const config =require("./connectconfig.js");//process.env.MONGODBCONFIG;//
 const db = mongoose.connect(config.mongodb);
 const moment = require('moment');
 mongoose.Promise = require('bluebird');
-require('../dbmodels/syslog.js');
+
 
 
 //console.log(db.model('syslog'));
 
-function insertData(level, title , content,collectionname) {
+function insertData(level, title, content,collectionname) {
+    var mongoMocha= require('../dbmodels/syslog.js');
+    mongoMocha(collectionname,collectionname);
     var model = db.model(collectionname);
     var data = {
         title: title,
@@ -26,18 +28,10 @@ function insertData(level, title , content,collectionname) {
     });
 }
 
-function selectData(strWhere, collectionname) {
-    var model = db.model(collectionname);
-    model.find(strWhere, '', '', function (error, result) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(result);
-        }
-    });
+module.exports = {
+    insertData: insertData
 }
 
-module.exports = {
-    insertData: insertData,
-    selectData: selectData
-}
+process.on('uncaughtException', function (err) {
+    console.log('Caught exception: ' + err);
+});

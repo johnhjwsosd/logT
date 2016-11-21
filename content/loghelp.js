@@ -5,14 +5,6 @@ const mongo  = require('./mongodb.js');
 log4js.configure({
     appenders: [
         { type: 'console' }, //控制台输出
-        /*{
-            type: 'file',
-            "filename": "logs/log.log",
-            "pattern": "-yyyy-MM-dd",
-            "maxLogSize": 2097152,
-            "alwaysIncludePattern": true
-        }  */
-        /*  { type: path  }    ---配置数据库  */
     ]
 });
 

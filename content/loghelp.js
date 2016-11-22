@@ -1,5 +1,5 @@
 const log4js = require('log4js');
-const mongo  = require('./mongodb.js');
+const mongo = require('./mongodb.js');
 //var path = __dirname + '/../appenders/mongodb'    ---- mongodb附加文件地点
 
 log4js.configure({
@@ -8,29 +8,45 @@ log4js.configure({
     ]
 });
 
-var logwrite = function (level,infotitle, logcontent,collectionname) {
+var logwrite = function (level, infotitle, logcontent, collectionname) {
     var logger = log4js.getLogger(infotitle);
-    logger.setLevel(level);
+    //logger.setLevel("info");
     writeConsole(logcontent, logger);
 
-    if(level === 'error' || level === 'fatal'){
-        writeMongodb(level,infotitle, logcontent,collectionname);
+    if (level === 'error' || level === 'fatal') {
+        writeMongodb(level, infotitle, logcontent, collectionname);
     }
 }
 
 var writeConsole = function (logcontent, logger) {
-    logger.trace(logcontent);
-    logger.debug(logcontent);
-    logger.info(logcontent);
-    logger.warn(logcontent);
-    logger.error(logcontent);
-    logger.fatal(logcontent);
+    switch (logger) {
+        case "info":
+            logger.info(logcontent);
+            break;
+        case "trace":
+            logger.trace(logcontent);
+            break;
+        case "debug":
+            logger.debug(logcontent);
+            break;
+        case "warn":
+            logger.warn(logcontent);
+            break;
+        case "error":
+            logger.error(logcontent);
+            break;
+        case "fatal":
+            logger.fatal(logcontent);
+            break;
+        default:
+            logger.info(logcontent);
+            break;
+    }
 }
 
 
-var writeMongodb = function (level,infotitle, logcontent,collectionname) {
-    mongo.insertData(level,infotitle,logcontent,collectionname);
-    //console.log('writing db');
+var writeMongodb = function (level, infotitle, logcontent, collectionname) {
+    mongo.insertData(level, infotitle, logcontent, collectionname);
 }
 
 

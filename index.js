@@ -7,6 +7,12 @@ const logger = require('./content/loghelp.js');
  * logcontent 
  * collectionname mongodb collection name 
  */
-module.exports=function(level,infotitle, logcontent,collectionname){
-    logger.logwrite(level,infotitle, logcontent,collectionname);
+module.exports = function (level, infotitle, logcontent, collectionname) {
+    logger.logwrite(level, infotitle, logcontent, collectionname);
 }
+
+/**
+ * test
+ */
+ //logger.logwrite("info","test", "this is a test","test");
+ //logger.logwrite("error","test", "this is a test","test");

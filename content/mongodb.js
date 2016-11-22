@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const config =require("./connectconfig.js");//process.env.MONGODBCONFIG;//
-const db = mongoose.connect(config.mongodb);
+const dbconfig =process.env.MONGO_DB_CONFIG;//require("./connectconfig.js");/
+const db = mongoose.connect(dbconfig);
 const moment = require('moment');
 mongoose.Promise = require('bluebird');
 

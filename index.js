@@ -10,4 +10,3 @@ const logger = require('./content/loghelp.js');
 module.exports=function(level,infotitle, logcontent,collectionname){
     logger.logwrite(level,infotitle, logcontent,collectionname);
 }
-

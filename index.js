@@ -4,7 +4,7 @@ const logger = require('./content/loghelp.js');
 /**
  * level ---trace,debug,info,error,fatal
  * infotitle  show tile
- * logcontent 
+ * logcontent 为了方便查询 日志内容改为JSON
  * collectionname mongodb collection name 
  */
 module.exports = function (level, infotitle, logcontent, collectionname) {

@@ -6,4 +6,4 @@
 MONGO_DB_CONFIG=mongodb://127.0.0.1:27017/test
 
 var logger = require('logsys')
-logger("error","myt2","this is a error","t2")
+logger("error","mytt",{"name":"john","age":18},"t1")

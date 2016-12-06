@@ -4,7 +4,7 @@ var skipId;
 
 var syslogSchema = new mongoose.Schema({
     title: String,
-    content: String,
+    content: {},
     level: String,
     createdate: Date
 });

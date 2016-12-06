@@ -11,15 +11,15 @@ log4js.configure({
 var logwrite = function (level, infotitle, logcontent, collectionname) {
     var logger = log4js.getLogger(infotitle);
     //logger.setLevel("info");
-    writeConsole(logcontent, logger);
+    writeConsole(logcontent, logger, level);
 
     if (level === 'error' || level === 'fatal') {
         writeMongodb(level, infotitle, logcontent, collectionname);
     }
 }
 
-var writeConsole = function (logcontent, logger) {
-    switch (logger) {
+var writeConsole = function (logcontent, logger, level) {
+    switch (level) {
         case "info":
             logger.info(logcontent);
             break;

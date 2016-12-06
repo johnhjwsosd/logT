@@ -1,7 +1,7 @@
 {
   "name": "logsys",
-  "version": "1.0.8",
-  "description": "log",
+  "version": "1.0.9",
+  "description": "log log4js mongo",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

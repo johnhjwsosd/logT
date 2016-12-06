@@ -13,9 +13,13 @@ var logwrite = function (level, infotitle, logcontent, collectionname) {
     //logger.setLevel("info");
     writeConsole(logcontent, logger, level);
 
-    if (level === 'error' || level === 'fatal') {
-        writeMongodb(level, infotitle, logcontent, collectionname);
-    }
+    //根据级别写shuju
+    // if (level === 'error' || level === 'fatal') {
+    //     writeMongodb(level, infotitle, logcontent, collectionname);
+    // }
+
+    writeMongodb(level, infotitle, logcontent, collectionname);
+
 }
 
 var writeConsole = function (logcontent, logger, level) {

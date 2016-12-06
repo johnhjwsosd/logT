@@ -1,4 +1,4 @@
-const logger = require('./content/loghelp.js');
+
 
 
 /**
@@ -7,14 +7,14 @@ const logger = require('./content/loghelp.js');
  * logcontent 为了方便查询 日志内容改为JSON
  * collectionname mongodb collection name 
  */
-module.exports = function (level, infotitle, logcontent, collectionname) {
+module.exports.Create = function (host) {
+    process.env.MONGO_DB_CONFIGs = host;//"mongodb://127.0.0.1:27017/log"
+    const logger = require('./content/loghelp.js');
+    return logger;
+}
+logger.prototype.log = function (level, infotitle, logcontent, collectionname) {
     logger.logwrite(level, infotitle, logcontent, collectionname);
 }
 
-/**
- * test
- */
-//env MONGO_DB_CONFIG   mongodb://127.0.0.1:27017/log
 
- //logger.logwrite("info","test", "this is a test","test");
- //logger.logwrite("error","test", "this is a test","test");
+

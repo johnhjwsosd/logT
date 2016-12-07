@@ -8,6 +8,7 @@ var syslogSchema = new mongoose.Schema({
     level: String,
     createdate: Date
 });
+
 module.exports = function (doc, skipId) {
     doc = doc;
     skipId = skipId

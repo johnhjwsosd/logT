@@ -1,5 +1,7 @@
 
-var logObj = require('./content/loghelp.js');
+//process.env.TZ = ''
+
+var logObj = require('./lib/loghelp.js');
 
 function Logger(host) {
     global.MONGO_DB_CONFIGs = host;
@@ -14,6 +16,10 @@ function Logger(host) {
  */
 Logger.prototype.log = function (level, infotitle, logcontent, collectionname) {
     logObj.logwrite(level, infotitle, logcontent, collectionname);
+}
+
+Logger.prototype.read = function (logcontent, field, values) {
+    logObj.logRead(logcontent, field, values);
 }
 
 

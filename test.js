@@ -7,5 +7,6 @@
 //logger.logwrite("error","test", "this is a test","test");
 
 var logger = require("./index.js");
-var log = logger.Create("mongodb://127.0.0.1:27017/log");
-log.log("error", "test", "this is a test", "test")
+var log = new logger("mongodb://127.0.0.1:27017/pig");
+log.log("warn", "test", { name: "pigs", age: 18 }, "pig1")
+

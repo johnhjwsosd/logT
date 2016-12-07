@@ -1,14 +1,11 @@
 const mongoose = require('mongoose');
-const dbconfig =process.env.MONGO_DB_CONFIGs;//require("./connectconfig.js");/
-const db = mongoose.connect(dbconfig);
+const mongoMocha = require('../dbmodels/syslog.js');
 const moment = require('moment');
 mongoose.Promise = require('bluebird');
-
-
-
-function insertData(level, title, content,collectionname) {
-    var mongoMocha= require('../dbmodels/syslog.js');
-    mongoMocha(collectionname,collectionname);
+function insertData(level, title, content, collectionname) {
+    let dbconfig = global.MONGO_DB_CONFIGs;
+    let db = mongoose.connect(dbconfig);
+    mongoMocha(collectionname, collectionname);
     var model = db.model(collectionname);
     var data = {
         title: title,

@@ -2,7 +2,7 @@
 var logObj = require('./content/loghelp.js');
 
 function Logger(host) {
-    global.MONGO_DB_CONFIGs = host;//"mongodb://127.0.0.1:27017/log"
+    global.MONGO_DB_CONFIGs = host;
 }
 
 

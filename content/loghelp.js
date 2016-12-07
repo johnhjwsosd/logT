@@ -25,25 +25,25 @@ var logwrite = function (level, infotitle, logcontent, collectionname) {
 var writeConsole = function (logcontent, logger, level) {
     switch (level) {
         case "info":
-            logger.info(logcontent);
+            logger.info(logcontent.content||JSON.stringify(logcontent));
             break;
         case "trace":
-            logger.trace(logcontent);
+            logger.trace(logcontent.content||JSON.stringify(logcontent));
             break;
         case "debug":
-            logger.debug(logcontent);
+            logger.debug(logcontent.content||JSON.stringify(logcontent));
             break;
         case "warn":
-            logger.warn(logcontent);
+            logger.warn(logcontent.content||JSON.stringify(logcontent));
             break;
         case "error":
-            logger.error(logcontent);
+            logger.error(logcontent.content||JSON.stringify(logcontent));
             break;
         case "fatal":
-            logger.fatal(logcontent);
+            logger.fatal(logcontent.content||JSON.stringify(logcontent));
             break;
         default:
-            logger.info(logcontent);
+            logger.info(logcontent.content||JSON.stringify(logcontent));
             break;
     }
 }

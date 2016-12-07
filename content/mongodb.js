@@ -18,7 +18,7 @@ function insertData(level, title, content, collectionname) {
         if (error) {
             console.log(error);
         } else {
-            console.log('saved OK!');
+            //console.log('saved OK!');
         }
     });
 }

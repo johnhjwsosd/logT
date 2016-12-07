@@ -1,10 +1,9 @@
 为了自己使用mongo记录日志，基于log4js。
 ===
 
-例:
---
-添加环境变量存储环境mongodb的配置<br>
-MONGO_DB_CONFIG=mongodb://127.0.0.1:27017/test
+<pre><code>
+npm install logsys
+</code></pre>
 <br>
 
 <pre><code>
@@ -15,5 +14,7 @@ var logger = require('logsys')
  * logcontent 为了方便查询 日志内容改为JSON
  * collectionname mongodb collection name 
  */
-logger("error","mytt",{"name":"john","age":18},"t1")
+var logger = require("./index.js");
+var log = new logger("mongodb://127.0.0.1:27017/test");
+log.log("warn", "test", { name: "test", age: 18 }, "test")
 </code></pre>

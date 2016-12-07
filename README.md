@@ -15,5 +15,15 @@ var logger = require('logsys')
  * collectionname mongodb collection name 
  */
 var log = new logger("mongodb://127.0.0.1:27017/test");
-log.log("warnXXX", "test", { name: "test", age: 80, content: "just test" }, "test")
+log.log("warn", "test", { name: "test2", age: "23", content: "test1" }, "test1")
+
+
+/*
+*add readlog methods
+*/
+log.read("test1");
+
+console.log('---------------------');
+
+log.read("test1", "content.name","test1")
 </code></pre>

@@ -18,8 +18,13 @@ Logger.prototype.log = function (level, infotitle, logcontent, collectionname) {
     logObj.logwrite(level, infotitle, logcontent, collectionname);
 }
 
-Logger.prototype.read = function (logcontent, field, values) {
-    logObj.logRead(logcontent, field, values);
+
+/**
+ * collectionname 集合表名
+ * field 过滤字段 values 过滤值
+ */
+Logger.prototype.read = function (collectionname, field, values) {
+    logObj.logRead(collectionname, field, values);
 }
 
 

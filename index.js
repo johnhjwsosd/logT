@@ -1,10 +1,11 @@
 
 //process.env.TZ = ''
 
-var logObj = require('./lib/loghelp.js');
+var logObj;
 
 function Logger(host) {
-    global.MONGO_DB_CONFIGs = host;
+    global.MONGO_DB_CONFIG = host;
+    logObj = require('./lib/loghelp.js');
 }
 
 

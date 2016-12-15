@@ -25,3 +25,12 @@ log.log("warn", "test", { name: "test2", age: "23", content: "test1" }, "test1")
  */
 log.read("test1");
 //log.read("test1", "content.name", "test1")
+
+
+/**
+ * 捕获异常
+ * 
+ */
+process.on('uncaughtException', function (err) {
+    console.log('Caught exception: ' + err);
+});

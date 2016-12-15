@@ -28,3 +28,10 @@ log.log("warn", "test", { name: "test2", age: "23", content: "test1" }, "test1")
 log.read("test1");
 //log.read("test1", "content.name", "test1")
 </code></pre>
+
+增加抛出未捕获的异常
+<pre><code>
+process.on('uncaughtException', function (err) {
+    console.log('Caught exception: ' + err);
+});
+</pre></code>

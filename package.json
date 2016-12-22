@@ -1,6 +1,6 @@
 {
   "name": "logsys",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "log log4js mongo",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git://https://github.com/johnhjwsosd/logt.git"
+    "url": "https://github.com/johnhjwsosd/logt.git"
   },
   "dependencies": {
     "bluebird": "^3.4.6",
